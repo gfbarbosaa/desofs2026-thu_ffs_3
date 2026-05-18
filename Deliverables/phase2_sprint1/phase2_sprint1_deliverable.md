@@ -1,6 +1,6 @@
 # SafeVault - Phase 2 Sprint 1 Deliverable
 
-**Repositorio:** desofs2026_thu_ffs_3
+**Repositório:** desofs2026_thu_ffs_3
 
 **Turma:** thu_ffs
 
@@ -12,7 +12,7 @@
 
 ## 1. Objetivo da Sprint
 
-Implementar e automatizar o conjunto de praticas de desenvolvimento e testes de seguranca exigidas na rubrica 6.2 (Development, Build and Test, Pipeline automation, ASVS), mantendo coerencia entre documentacao e desenvolvimento.
+Implementar e automatizar o conjunto de práticas de desenvolvimento e testes de segurança exigidas na rubrica 6.2 (Development, Build and Test, Pipeline automation, ASVS), mantendo coerência entre documentação e desenvolvimento.
 
 ---
 
@@ -21,42 +21,42 @@ Implementar e automatizar o conjunto de praticas de desenvolvimento e testes de 
 - Pipeline CI com build, testes e SCA.
 - SAST via CodeQL.
 - DAST baseline via OWASP ZAP (workflow manual para alvo externo).
-- IAST leve com middleware de deteccao de padroes suspeitos.
-- Hardening tecnico: segredos removidos do repositorio, CSRF dinamico, erros sem detalhe interno, validacao de magic bytes.
-- Documentacao completa e rastreabilidade actualizada.
+- IAST leve com middleware de deteção de padrões suspeitos.
+- Hardening técnico: segredos removidos do repositório, CSRF dinâmico, erros sem detalhe interno, validação de magic bytes.
+- Documentação completa e rastreabilidade atualizada.
 
 ---
 
 ## 3. Desenvolvimento (30%)
 
-### 3.1 Boas praticas e code review
+### 3.1 Boas práticas e code review
 
 - Code review formalizado com CODEOWNERS e template de PR:
   - [\.github/CODEOWNERS](../../.github/CODEOWNERS)
   - [\.github/pull_request_template.md](../../.github/pull_request_template.md)
-- Politica de revisao: pelo menos 1 revisor e checklist de seguranca no PR.
+- Política de revisão: pelo menos 1 revisor e checklist de segurança no PR.
 
-### 3.2 Hardening tecnico implementado
+### 3.2 Hardening técnico implementado
 
 - Segredos removidos de ficheiros versionados:
   - [src/InterfaceAdapters/appsettings.json](../../src/InterfaceAdapters/appsettings.json)
   - [src/InterfaceAdapters/appsettings.Development.json](../../src/InterfaceAdapters/appsettings.Development.json)
-- Validacao de segredo e connection string em runtime:
+- Validação de segredo e connection string em runtime:
   - [src/InterfaceAdapters/Program.cs](../../src/InterfaceAdapters/Program.cs)
-- CSRF token dinamico com validade de 30 minutos:
+- CSRF token dinâmico com validade de 30 minutos:
   - [src/Infrastructure/Security/CsrfTokenService.cs](../../src/Infrastructure/Security/CsrfTokenService.cs)
   - [src/InterfaceAdapters/Middleware/CsrfTokenMiddleware.cs](../../src/InterfaceAdapters/Middleware/CsrfTokenMiddleware.cs)
   - [src/InterfaceAdapters/Controllers/AuthController.cs](../../src/InterfaceAdapters/Controllers/AuthController.cs)
 - Erros sem detalhe interno, com correlation id:
   - [src/InterfaceAdapters/Middleware/ExceptionHandlingMiddleware.cs](../../src/InterfaceAdapters/Middleware/ExceptionHandlingMiddleware.cs)
-- Validacao de magic bytes para uploads:
+- Validação de magic bytes para uploads:
   - [src/Application/Services/DocumentService.cs](../../src/Application/Services/DocumentService.cs)
 
 ### 3.3 IAST leve (runtime detection)
 
-- Middleware de deteccao de padroes suspeitos (SQLi/XSS/path traversal) em runtime:
+- Middleware de deteção de padrões suspeitos (SQLi/XSS/path traversal) em runtime:
   - [src/InterfaceAdapters/Middleware/IastMonitoringMiddleware.cs](../../src/InterfaceAdapters/Middleware/IastMonitoringMiddleware.cs)
-- Controlado por configuracao:
+- Controlado por configuração:
   - [src/InterfaceAdapters/appsettings.json](../../src/InterfaceAdapters/appsettings.json)
   - [src/InterfaceAdapters/appsettings.Development.json](../../src/InterfaceAdapters/appsettings.Development.json)
 
@@ -64,7 +64,7 @@ Implementar e automatizar o conjunto de praticas de desenvolvimento e testes de 
 
 ## 4. Build and Test (30%)
 
-### 4.1 Execucao automatizada de testes
+### 4.1 Execução automatizada de testes
 
 - Pipeline executa build e testes com cobertura:
   - [\.github/workflows/ci.yml](../../.github/workflows/ci.yml)
@@ -73,12 +73,12 @@ Implementar e automatizar o conjunto de praticas de desenvolvimento e testes de 
   - [tests/InfrastructureTests](../../tests/InfrastructureTests)
   - [tests/InterfaceAdaptersTests](../../tests/InterfaceAdaptersTests)
 
-### 4.2 Validacao de configuracao
+### 4.2 Validação de configuração
 
-- Falha rapida se secrets/connection string estiverem ausentes:
+- Falha rápida se secrets/connection string estiverem ausentes:
   - [src/InterfaceAdapters/Program.cs](../../src/InterfaceAdapters/Program.cs)
 
-### 4.3 Analise dinamica (DAST)
+### 4.3 Análise dinâmica (DAST)
 
 - OWASP ZAP baseline via workflow manual para alvo externo (staging):
   - [\.github/workflows/dast.yml](../../.github/workflows/dast.yml)
@@ -105,22 +105,22 @@ Implementar e automatizar o conjunto de praticas de desenvolvimento e testes de 
 
 ### 5.4 DAST
 
-- OWASP ZAP baseline para alvo configuravel via workflow_dispatch:
+- OWASP ZAP baseline para alvo configurável via workflow_dispatch:
   - [\.github/workflows/dast.yml](../../.github/workflows/dast.yml)
 
 ---
 
 ## 6. ASVS (15%)
 
-Checklist actualizado e alinhado com evidencias reais:
+Checklist atualizado e alinhado com evidências reais:
 
 - [phase2_sprint1_asvs_checklist.md](phase2_sprint1_asvs_checklist.md)
 
 ---
 
-## 7. Comandos e reproducao local
+## 7. Comandos e reprodução local
 
-### 7.1 Variaveis de ambiente obrigatorias
+### 7.1 Variáveis de ambiente obrigatórias
 
 ```
 ConnectionStrings__DefaultConnection=Host=localhost;Port=5432;Database=safevault;Username=postgres;Password=postgres
@@ -139,7 +139,7 @@ dotnet test --configuration Release
 
 ### 7.3 DAST manual (ZAP)
 
-Executar o workflow `dast.yml` via GitHub Actions e fornecer um URL de staging valido (HTTPS).
+Executar o workflow `dast.yml` via GitHub Actions e fornecer um URL de staging válido (HTTPS).
 
 ---
 
@@ -150,8 +150,8 @@ Executar o workflow `dast.yml` via GitHub Actions e fornecer um URL de staging v
 
 ---
 
-## 9. Lacunas conhecidas e proxima sprint
+## 9. Lacunas conhecidas e próxima sprint
 
-- Integrar DAST automatico contra ambiente de staging com dados reais.
-- Estender IAST com instrumentacao mais profunda (body inspection controlado e correlacao request->sink).
-- Completar evidencias de execucao (links diretos para runs da pipeline).
+- Integrar DAST automático contra ambiente de staging com dados reais.
+- Estender IAST com instrumentação mais profunda (body inspection controlado e correlação request->sink).
+- Completar evidências de execução (links diretos para runs da pipeline).

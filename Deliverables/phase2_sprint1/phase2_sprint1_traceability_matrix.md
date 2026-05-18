@@ -1,11 +1,11 @@
 # Phase 2 Sprint 1 - Traceability Matrix
 
-| Requisito de Seguranca | Implementacao | Teste / Evidencia | Pipeline |
+| Requisito de Segurança | Implementação | Teste / Evidência | Pipeline |
 |---|---|---|---|
 | RS-01.1 JWT seguro | [src/InterfaceAdapters/Program.cs](../../src/InterfaceAdapters/Program.cs) | [tests/InfrastructureTests/JwtTokenServiceTests.cs](../../tests/InfrastructureTests/JwtTokenServiceTests.cs) | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
 | RS-01.3 RBAC server-side | [src/InterfaceAdapters/Controllers](../../src/InterfaceAdapters/Controllers) | [tests/InterfaceAdaptersTests/ControllersCoverageTests.cs](../../tests/InterfaceAdaptersTests/ControllersCoverageTests.cs) | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
 | RS-01.4 Lockout e rate limit | [src/Application/Services/AuthService.cs](../../src/Application/Services/AuthService.cs), [src/InterfaceAdapters/Program.cs](../../src/InterfaceAdapters/Program.cs) | [tests/ApplicationTests/AuthServiceTests.cs](../../tests/ApplicationTests/AuthServiceTests.cs) | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
-| RS-02.2 Segredos fora do repo | [src/InterfaceAdapters/appsettings.json](../../src/InterfaceAdapters/appsettings.json) | Validacao runtime em [src/InterfaceAdapters/Program.cs](../../src/InterfaceAdapters/Program.cs) | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
+| RS-02.2 Segredos fora do repo | [src/InterfaceAdapters/appsettings.json](../../src/InterfaceAdapters/appsettings.json) | Validação runtime em [src/InterfaceAdapters/Program.cs](../../src/InterfaceAdapters/Program.cs) | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
 | RS-02.3 Integridade SHA-256 | [src/Application/Services/DocumentService.cs](../../src/Application/Services/DocumentService.cs) | [tests/ApplicationTests/DocumentServiceTests.cs](../../tests/ApplicationTests/DocumentServiceTests.cs) | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
 | RS-02.4 Erros sem detalhe interno | [src/InterfaceAdapters/Middleware/ExceptionHandlingMiddleware.cs](../../src/InterfaceAdapters/Middleware/ExceptionHandlingMiddleware.cs) | [tests/InterfaceAdaptersTests/ExceptionHandlingMiddlewareTests.cs](../../tests/InterfaceAdaptersTests/ExceptionHandlingMiddlewareTests.cs) | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
 | RS-03.1 TLS only | [src/InterfaceAdapters/Program.cs](../../src/InterfaceAdapters/Program.cs) | Config test manual | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
@@ -13,4 +13,4 @@
 | RS-04.5 Path traversal | [src/Infrastructure/Storage/FileStorageService.cs](../../src/Infrastructure/Storage/FileStorageService.cs) | [tests/InfrastructureTests/FileStorageServiceTests.cs](../../tests/InfrastructureTests/FileStorageServiceTests.cs) | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
 | RS-05.1 SCA automatizado | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) | artefacto sca-report.txt | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
 | RS-06.1 Auditoria | [src/Infrastructure/Storage/AuditWriterService.cs](../../src/Infrastructure/Storage/AuditWriterService.cs) | [tests/InfrastructureTests/RepositoryCoverageTests.cs](../../tests/InfrastructureTests/RepositoryCoverageTests.cs) | [\.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
-| RS-06.4 Deteccao de anomalias / IAST | [src/InterfaceAdapters/Middleware/IastMonitoringMiddleware.cs](../../src/InterfaceAdapters/Middleware/IastMonitoringMiddleware.cs) | Teste manual (inputs maliciosos em staging) | [\.github/workflows/dast.yml](../../.github/workflows/dast.yml) |
+| RS-06.4 Deteção de anomalias / IAST | [src/InterfaceAdapters/Middleware/IastMonitoringMiddleware.cs](../../src/InterfaceAdapters/Middleware/IastMonitoringMiddleware.cs) | Teste manual (inputs maliciosos em staging) | [\.github/workflows/dast.yml](../../.github/workflows/dast.yml) |
