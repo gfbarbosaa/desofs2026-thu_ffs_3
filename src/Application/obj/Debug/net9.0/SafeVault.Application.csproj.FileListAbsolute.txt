@@ -30,3 +30,19 @@ C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\D
 C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\refint\SafeVault.Application.dll
 C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\SafeVault.Application.pdb
 C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\ref\SafeVault.Application.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\bin\Debug\net9.0\SafeVault.Application.deps.json
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\bin\Debug\net9.0\SafeVault.Application.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\bin\Debug\net9.0\SafeVault.Application.pdb
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\bin\Debug\net9.0\SafeVault.Domain.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\bin\Debug\net9.0\SafeVault.Domain.pdb
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\SafeVault.Application.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\SafeVault.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\SafeVault.Application.AssemblyInfoInputs.cache
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\SafeVault.Application.AssemblyInfo.cs
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\SafeVault.Application.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\SafeVault.Application.sourcelink.json
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\SafeVaul.E115D530.Up2Date
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\SafeVault.Application.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\refint\SafeVault.Application.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\SafeVault.Application.pdb
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Application\obj\Debug\net9.0\ref\SafeVault.Application.dll

@@ -1,0 +1,31 @@
+# docker-compose override for DAST/ZAP scanning
+
+services:
+  api:
+    # Expose on localhost for ZAP scanner access
+    ports:
+      - "8080:8080"
+    networks:
+      - backend
+      - zap-net
+
+  zap:
+    image: ghcr.io/zaproxy/zaproxy:stable
+    depends_on:
+      - api
+    command: >
+      zap-baseline.py
+      -t http://api:8080
+      -r /zap/wrk/zap-report.html
+      -x /zap/wrk/zap-report.xml
+      -J /zap/wrk/zap-report.json
+      -c /zap/wrk/.zap/rules.tsv
+      -I
+    volumes:
+      - .:/zap/wrk:rw
+    networks:
+      - zap-net
+
+networks:
+  zap-net:
+    driver: bridge

@@ -38,3 +38,23 @@ C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\D
 C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.pdb
 C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.genruntimeconfig.cache
 C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\ref\SafeVault.Infrastructure.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\bin\Debug\net9.0\SafeVault.Infrastructure.deps.json
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\bin\Debug\net9.0\SafeVault.Infrastructure.runtimeconfig.json
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\bin\Debug\net9.0\SafeVault.Infrastructure.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\bin\Debug\net9.0\SafeVault.Infrastructure.pdb
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\bin\Debug\net9.0\SafeVault.Application.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\bin\Debug\net9.0\SafeVault.Domain.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\bin\Debug\net9.0\SafeVault.Application.pdb
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\bin\Debug\net9.0\SafeVault.Domain.pdb
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.AssemblyInfo.cs
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.sourcelink.json
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVaul.1DA36D17.Up2Date
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\refint\SafeVault.Infrastructure.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.pdb
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\SafeVault.Infrastructure.genruntimeconfig.cache
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Infrastructure\obj\Debug\net9.0\ref\SafeVault.Infrastructure.dll

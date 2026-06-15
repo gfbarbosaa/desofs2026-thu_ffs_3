@@ -1,2 +1,48 @@
 # ZAP baseline rules overrides
-# Example format: <ruleId>\t<action>\t<comment>
+# Format: <ruleId>\t<action>\t<comment>
+# Actions: IGNORE (suppress), WARN (warn but don't fail), FAIL (fail the scan)
+#
+# Rule IDs reference: https://www.zaproxy.org/docs/alerts/
+
+# --- Informational / false positives in dev/CI environments ---
+
+# 10016 - Web Browser XSS Protection Not Enabled
+# X-XSS-Protection is intentionally absent (deprecated header, CSP is used instead)
+10016	IGNORE	X-XSS-Protection deprecated; CSP header is used instead
+
+# 10096 - Timestamp Disclosure - Unix
+# API returns timestamps in responses (expected behaviour, not a vulnerability)
+10096	IGNORE	Timestamps in JSON responses are expected behaviour
+
+# 10035 - Strict-Transport-Security Header Not Set
+# Only applicable in production with TLS; not available in CI Docker environment
+10035	WARN	HSTS not set in CI test environment (HTTP only); set in production behind TLS
+
+# 10038 - Content Security Policy (CSP) Header Not Set
+# API does not serve HTML; CSP is less relevant for pure JSON REST APIs
+10038	WARN	REST API with no HTML output; CSP less critical but should be reviewed
+
+# 10036 - Server Leaks Version Information via "Server" HTTP Response Header Field
+10036	WARN	Server header should be suppressed in production
+
+# 10021 - X-Content-Type-Options Header Missing
+# Our SecurityHeadersMiddleware sets this; flag if actually missing
+10021	FAIL	X-Content-Type-Options must be set (set by SecurityHeadersMiddleware)
+
+# 40012 - Cross Site Scripting (Reflected)
+40012	FAIL	XSS must not be present
+
+# 40014 - Cross Site Scripting (Persistent)
+40014	FAIL	Persistent XSS must not be present
+
+# 40018 - SQL Injection
+40018	FAIL	SQL Injection must not be present
+
+# 90020 - Remote OS Command Injection
+90020	FAIL	OS command injection must not be present
+
+# 6 - Path Traversal
+6	FAIL	Path traversal must not be present
+
+# 40009 - Server Side Include
+40009	FAIL	SSI injection must not be present

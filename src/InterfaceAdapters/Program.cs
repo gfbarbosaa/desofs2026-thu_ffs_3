@@ -1,6 +1,8 @@
 using System.Text;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using SafeVault.Application;
@@ -24,6 +26,14 @@ builder.Services.AddDataProtection();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
+
+// Health checks (used by Docker, DAST, and load balancers)
+builder.Services.AddHealthChecks()
+    .AddNpgSql(
+        builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty,
+        name: "postgresql",
+        failureStatus: HealthStatus.Unhealthy,
+        tags: ["db", "ready"]);
 
 builder.Services.AddRateLimiter(options =>
 {
@@ -58,7 +68,10 @@ builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
-        options.RequireHttpsMetadata = true;
+        // In production behind a reverse proxy, HTTPS is terminated at the proxy.
+        // Disable RequireHttpsMetadata in Docker/container environments.
+        options.RequireHttpsMetadata = !builder.Environment.IsEnvironment("Docker") &&
+                                        !builder.Environment.IsDevelopment();
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
@@ -84,17 +97,33 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// In Docker, HTTPS is terminated at the reverse proxy — skip redirection internally
+if (!app.Environment.IsEnvironment("Docker"))
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseMiddleware<SecurityHeadersMiddleware>();
 app.UseMiddleware<IastMonitoringMiddleware>();
 app.UseMiddleware<CsrfTokenMiddleware>();
 
-app.UseHttpsRedirection();
 app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Health check endpoints (no auth required — used by Docker/k8s/DAST)
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+    AllowCachingResponses = false
+});
+app.MapHealthChecks("/health/ready", new HealthCheckOptions
+{
+    Predicate = check => check.Tags.Contains("ready"),
+    AllowCachingResponses = false
+});
 
 app.Run();
 

@@ -22,3 +22,15 @@ C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\D
 C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\refint\SafeVault.Domain.dll
 C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\SafeVault.Domain.pdb
 C:\Users\goncalo.barbosa\OneDrive - Unavets Services S.L\Documents\ISEP\DESOFT\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\ref\SafeVault.Domain.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\bin\Debug\net9.0\SafeVault.Domain.deps.json
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\bin\Debug\net9.0\SafeVault.Domain.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\bin\Debug\net9.0\SafeVault.Domain.pdb
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\SafeVault.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\SafeVault.Domain.AssemblyInfoInputs.cache
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\SafeVault.Domain.AssemblyInfo.cs
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\SafeVault.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\SafeVault.Domain.sourcelink.json
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\SafeVault.Domain.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\refint\SafeVault.Domain.dll
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\SafeVault.Domain.pdb
+C:\Users\Admin\OneDrive\Documentos\ISEP\DESOFT\desofs2026-thu_ffs_3\src\Domain\obj\Debug\net9.0\ref\SafeVault.Domain.dll

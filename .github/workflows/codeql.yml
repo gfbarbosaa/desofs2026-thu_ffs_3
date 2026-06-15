@@ -4,6 +4,7 @@ on:
   push:
     branches: ["main"]
   pull_request:
+    branches: ["main"]
   schedule:
     - cron: "0 6 * * 1"
 
@@ -14,6 +15,7 @@ permissions:
 
 jobs:
   analyze:
+    name: "SAST · CodeQL Analysis"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,9 +25,14 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: csharp
+          # Extended security queries for OWASP coverage
+          queries: security-extended,security-and-quality
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
 
       - name: Analyze
         uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:csharp"
+          upload: true

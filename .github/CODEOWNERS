@@ -1,1 +1,19 @@
+# Global rule: every PR requires review from at least one team member
+
+# GitHub branch protection must be set to: "Require review from Code Owners"
+
+# Setting: Settings → Branches → main → Require pull request reviews before merging
+
+# ✓ Required approving reviews: 1
+
+# ✓ Require review from Code Owners
+
+# ✓ Dismiss stale pull request approvals when new commits are pushed
+
 * @mei-desofs
+
+# Extra ownership for sensitive paths
+
+.github/workflows/  @mei-desofs
+src/Infrastructure/Security/  @mei-desofs
+src/InterfaceAdapters/Middleware/ @mei-desofs

@@ -1,0 +1,199 @@
+name: release
+
+# Triggered when a version tag is pushed: e.g. v1.0.0
+on:
+    push:
+        tags:
+            - "v[0-9]+.[0-9]+.[0-9]+"
+
+permissions:
+    contents: write # Create GitHub Release
+    packages: write # Push to GHCR
+    security-events: read
+
+env:
+    REGISTRY: ghcr.io
+    IMAGE_NAME: ${{ github.repository_owner }}/safevault-api
+
+jobs:
+    # ──────────────────────────────────────────────────────────────────────────
+    # 1. Run full test suite before releasing
+    # ──────────────────────────────────────────────────────────────────────────
+    test:
+        name: "Verify · Tests"
+        runs-on: ubuntu-latest
+        services:
+            postgres:
+                image: postgres:16-alpine
+                env:
+                    POSTGRES_DB: safevault_ci
+                    POSTGRES_USER: postgres
+                    POSTGRES_PASSWORD: postgres
+                ports:
+                    - 5432:5432
+                options: >-
+                    --health-cmd "pg_isready -U postgres"
+                    --health-interval 10s
+                    --health-timeout 5s
+                    --health-retries 5
+        env:
+            ConnectionStrings__DefaultConnection: Host=localhost;Port=5432;Database=safevault_ci;Username=postgres;Password=postgres
+            Jwt__Issuer: SafeVault
+            Jwt__Audience: SafeVault.Api
+            Jwt__SigningKey: CI_SIGNING_KEY_CHANGE_ME_32_CHARS_123456
+            ASPNETCORE_ENVIRONMENT: Development
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-dotnet@v4
+              with:
+                  dotnet-version: 9.0.x
+            - run: dotnet restore
+            - run: dotnet test --configuration Release
+
+    # ──────────────────────────────────────────────────────────────────────────
+    # 2. Build self-contained executables for multiple platforms
+    # ──────────────────────────────────────────────────────────────────────────
+    build-artifacts:
+        name: "Build · Artifacts"
+        needs: test
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                include:
+                    - rid: linux-x64
+                      os_label: linux-x64
+                    - rid: win-x64
+                      os_label: windows-x64
+                    - rid: osx-x64
+                      os_label: macos-x64
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-dotnet@v4
+              with:
+                  dotnet-version: 9.0.x
+
+            - name: Publish self-contained binary (${{ matrix.rid }})
+              run: |
+                  dotnet publish src/InterfaceAdapters/SafeVault.InterfaceAdapters.csproj \
+                    --configuration Release \
+                    --runtime ${{ matrix.rid }} \
+                    --self-contained true \
+                    -p:PublishSingleFile=true \
+                    -p:IncludeNativeLibrariesForSelfExtract=true \
+                    --output publish/${{ matrix.os_label }}
+
+            - name: Compress artifact
+              run: |
+                  cd publish
+                  if [[ "${{ matrix.rid }}" == win-* ]]; then
+                    zip -r ../safevault-${{ matrix.os_label }}-${{ github.ref_name }}.zip ${{ matrix.os_label }}/
+                  else
+                    tar -czf ../safevault-${{ matrix.os_label }}-${{ github.ref_name }}.tar.gz ${{ matrix.os_label }}/
+                  fi
+
+            - name: Upload artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: safevault-${{ matrix.os_label }}
+                  path: |
+                      safevault-${{ matrix.os_label }}-*.zip
+                      safevault-${{ matrix.os_label }}-*.tar.gz
+
+    # ──────────────────────────────────────────────────────────────────────────
+    # 3. Build and push Docker image to GHCR and Docker Hub
+    # ──────────────────────────────────────────────────────────────────────────
+    docker:
+        name: "Docker · Build & Push"
+        needs: test
+        runs-on: ubuntu-latest
+        outputs:
+            digest: ${{ steps.docker-push.outputs.digest }}
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Set up QEMU
+              uses: docker/setup-qemu-action@v3
+
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v3
+
+            - name: Login to GHCR
+              uses: docker/login-action@v3
+              with:
+                  registry: ${{ env.REGISTRY }}
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Login to Docker Hub
+              uses: docker/login-action@v3
+              with:
+                  username: ${{ secrets.DOCKERHUB_USERNAME }}
+                  password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+            - name: Extract metadata (tags, labels)
+              id: meta
+              uses: docker/metadata-action@v5
+              with:
+                  images: |
+                      ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+                      ${{ secrets.DOCKERHUB_USERNAME }}/safevault-api
+                  tags: |
+                      type=semver,pattern={{version}}
+                      type=semver,pattern={{major}}.{{minor}}
+                      type=semver,pattern={{major}}
+                      type=sha
+
+            - name: Build and push
+              id: docker-push
+              uses: docker/build-push-action@v6
+              with:
+                  context: .
+                  file: ./Dockerfile
+                  platforms: linux/amd64,linux/arm64
+                  push: true
+                  tags: ${{ steps.meta.outputs.tags }}
+                  labels: ${{ steps.meta.outputs.labels }}
+                  cache-from: type=gha
+                  cache-to: type=gha,mode=max
+
+    # ──────────────────────────────────────────────────────────────────────────
+    # 4. Create GitHub Release with all platform artifacts
+    # ──────────────────────────────────────────────────────────────────────────
+    github-release:
+        name: "Release · GitHub"
+        needs: [build-artifacts, docker]
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Download all artifacts
+              uses: actions/download-artifact@v4
+              with:
+                  path: release-assets
+                  merge-multiple: true
+
+            - name: Generate release notes
+              id: notes
+              run: |
+                  TAG="${{ github.ref_name }}"
+                  echo "## SafeVault $TAG" > release_notes.md
+                  echo "" >> release_notes.md
+                  echo "### Docker image" >> release_notes.md
+                  echo "\`\`\`" >> release_notes.md
+                  echo "docker pull ghcr.io/${{ github.repository_owner }}/safevault-api:${TAG#v}" >> release_notes.md
+                  echo "# or" >> release_notes.md
+                  echo "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/safevault-api:${TAG#v}" >> release_notes.md
+                  echo "\`\`\`" >> release_notes.md
+                  echo "" >> release_notes.md
+                  echo "### Self-contained binaries" >> release_notes.md
+                  echo "Download the archive for your platform below." >> release_notes.md
+                  echo "Docker image digest: \`${{ needs.docker.outputs.digest }}\`" >> release_notes.md
+
+            - name: Create GitHub Release
+              uses: softprops/action-gh-release@v2
+              with:
+                  body_path: release_notes.md
+                  files: release-assets/**
+                  generate_release_notes: true
+                  make_latest: true

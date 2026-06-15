@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\tests\\InterfaceAdaptersTests\\SafeVault.InterfaceAdaptersTests.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\tests\\InterfaceAdaptersTests\\SafeVault.InterfaceAdaptersTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj",
         "projectName": "SafeVault.Application",
-        "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj",
-        "packagesPath": "C:\\Users\\goncalo.barbosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\goncalo.barbosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj": {
-                "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj"
               }
             }
           }
@@ -49,7 +49,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -75,29 +75,43 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj",
         "projectName": "SafeVault.Domain",
-        "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj",
-        "packagesPath": "C:\\Users\\goncalo.barbosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\goncalo.barbosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -125,7 +139,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -141,29 +155,43 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj",
         "projectName": "SafeVault.Infrastructure",
-        "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\goncalo.barbosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\goncalo.barbosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -179,11 +207,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj": {
-                "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj"
               },
-              "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj": {
-                "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj"
               }
             }
           }
@@ -198,7 +226,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -258,29 +286,43 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\SafeVault.InterfaceAdapters.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\SafeVault.InterfaceAdapters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\SafeVault.InterfaceAdapters.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\SafeVault.InterfaceAdapters.csproj",
         "projectName": "SafeVault.InterfaceAdapters",
-        "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\SafeVault.InterfaceAdapters.csproj",
-        "packagesPath": "C:\\Users\\goncalo.barbosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\SafeVault.InterfaceAdapters.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\goncalo.barbosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -296,14 +338,14 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj": {
-                "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj"
               },
-              "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj": {
-                "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj"
               },
-              "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj"
               }
             }
           }
@@ -318,12 +360,16 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AspNetCore.HealthChecks.NpgSql": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -354,6 +400,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -362,24 +426,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\tests\\InterfaceAdaptersTests\\SafeVault.InterfaceAdaptersTests.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\tests\\InterfaceAdaptersTests\\SafeVault.InterfaceAdaptersTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\tests\\InterfaceAdaptersTests\\SafeVault.InterfaceAdaptersTests.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\tests\\InterfaceAdaptersTests\\SafeVault.InterfaceAdaptersTests.csproj",
         "projectName": "SafeVault.InterfaceAdaptersTests",
-        "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\tests\\InterfaceAdaptersTests\\SafeVault.InterfaceAdaptersTests.csproj",
-        "packagesPath": "C:\\Users\\goncalo.barbosa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\tests\\InterfaceAdaptersTests\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\tests\\InterfaceAdaptersTests\\SafeVault.InterfaceAdaptersTests.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\tests\\InterfaceAdaptersTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\goncalo.barbosa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -395,17 +459,17 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj": {
-                "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj"
               },
-              "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj": {
-                "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Domain\\SafeVault.Domain.csproj"
               },
-              "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Infrastructure\\SafeVault.Infrastructure.csproj"
               },
-              "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\SafeVault.InterfaceAdapters.csproj": {
-                "projectPath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\SafeVault.InterfaceAdapters.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\SafeVault.InterfaceAdapters.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\InterfaceAdapters\\SafeVault.InterfaceAdapters.csproj"
               }
             }
           }
@@ -420,7 +484,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -462,12 +526,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.14, 9.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

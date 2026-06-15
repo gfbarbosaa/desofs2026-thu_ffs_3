@@ -4,13 +4,54 @@ on:
   push:
     branches: ["main"]
   pull_request:
+    branches: ["main", "develop"]
 
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: write
+
+# ──────────────────────────────────────────────────────────────────────────────
+# STAGE 1 — build & lint
+# ──────────────────────────────────────────────────────────────────────────────
 jobs:
-  build-test:
+  build:
+    name: "Stage 1 · Build"
+    runs-on: ubuntu-latest
+    outputs:
+      dotnet-version: "9.0.x"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build (Release)
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Cache build output
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/bin/Release
+            **/obj
+          key: build-${{ github.sha }}
+
+  # ──────────────────────────────────────────────────────────────────────────────
+  # STAGE 2 — unit + integration tests with coverage
+  # ──────────────────────────────────────────────────────────────────────────────
+  test:
+    name: "Stage 2 · Test & Coverage"
+    needs: build
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:16
+        image: postgres:16-alpine
         env:
           POSTGRES_DB: safevault_ci
           POSTGRES_USER: postgres
@@ -29,33 +70,92 @@ jobs:
       Jwt__SigningKey: CI_SIGNING_KEY_CHANGE_ME_32_CHARS_123456
       ASPNETCORE_ENVIRONMENT: Development
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 9.0.x
 
       - name: Restore
         run: dotnet restore
 
-      - name: Build
-        run: dotnet build --no-restore --configuration Release
+      - name: Test with coverage
+        run: |
+          dotnet test \
+            --configuration Release \
+            --collect "XPlat Code Coverage" \
+            --results-directory TestResults \
+            --logger "trx;LogFileName=results.trx" \
+            -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura
 
-      - name: Test
-        run: dotnet test --no-build --configuration Release --collect "XPlat Code Coverage"
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: TestResults/
 
-      - name: SCA (dotnet list package --vulnerable)
-        id: sca
-        continue-on-error: true
+      - name: Publish test results summary
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: "Unit Test Results"
+          path: "TestResults/**/*.trx"
+          reporter: dotnet-trx
+          fail-on-error: true
+
+  # ──────────────────────────────────────────────────────────────────────────────
+  # STAGE 3 — SCA (Software Composition Analysis)
+  # ──────────────────────────────────────────────────────────────────────────────
+  sca:
+    name: "Stage 3 · SCA"
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Check for vulnerable packages
+        id: vuln_check
         run: |
           mkdir -p artifacts
-          dotnet list package --vulnerable --include-transitive > artifacts/sca-report.txt
+          dotnet list package --vulnerable --include-transitive 2>&1 | tee artifacts/sca-report.txt
+          if grep -q "has the following vulnerable packages" artifacts/sca-report.txt; then
+            echo "::warning::Vulnerable NuGet packages detected — see sca-report.txt artifact"
+          fi
 
-      - name: Upload test artifacts
-        if: always()
+      - name: Upload SCA report
         uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: test-and-sca-reports
-          path: artifacts
+          name: sca-report
+          path: artifacts/sca-report.txt
+
+  # ──────────────────────────────────────────────────────────────────────────────
+  # STAGE 4 — Docker image build validation
+  # ──────────────────────────────────────────────────────────────────────────────
+  docker-build:
+    name: "Stage 4 · Docker Build"
+    needs: [test, sca]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image (validation)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: safevault/api:ci-${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

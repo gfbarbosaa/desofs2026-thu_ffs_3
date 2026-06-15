@@ -22,10 +22,11 @@ public class DocumentsController(IDocumentService documentService) : ControllerB
     [HttpPost("upload")]
     [Authorize(Roles = "Admin,Manager")]
     [RequestSizeLimit(104_857_600)]
-    public async Task<ActionResult<DocumentDto>> Upload([FromForm] Guid vaultId, [FromForm] DocumentClassification classification, [FromForm] IFormFile file, CancellationToken cancellationToken)
+    [Consumes("multipart/form-data")]
+    public async Task<ActionResult<DocumentDto>> Upload([FromForm] UploadDocumentForm form, CancellationToken cancellationToken)
     {
-        await using var stream = file.OpenReadStream();
-        var request = new UploadDocumentRequest(vaultId, file.FileName, file.ContentType, file.Length, classification, stream);
+        await using var stream = form.File.OpenReadStream();
+        var request = new UploadDocumentRequest(form.VaultId, form.File.FileName, form.File.ContentType, form.File.Length, form.Classification, stream);
         var userId = User.GetRequiredUserId();
 
         var result = await documentService.UploadAsync(userId, request, cancellationToken);
@@ -35,10 +36,11 @@ public class DocumentsController(IDocumentService documentService) : ControllerB
     [HttpPost("{documentId:guid}/versions")]
     [Authorize(Roles = "Admin,Manager")]
     [RequestSizeLimit(104_857_600)]
-    public async Task<ActionResult<DocumentDto>> UploadNewVersion(Guid documentId, [FromForm] Guid vaultId, [FromForm] DocumentClassification classification, [FromForm] IFormFile file, CancellationToken cancellationToken)
+    [Consumes("multipart/form-data")]
+    public async Task<ActionResult<DocumentDto>> UploadNewVersion(Guid documentId, [FromForm] UploadDocumentVersionForm form, CancellationToken cancellationToken)
     {
-        await using var stream = file.OpenReadStream();
-        var request = new UploadDocumentRequest(vaultId, file.FileName, file.ContentType, file.Length, classification, stream);
+        await using var stream = form.File.OpenReadStream();
+        var request = new UploadDocumentRequest(form.VaultId, form.File.FileName, form.File.ContentType, form.File.Length, form.Classification, stream);
         var userId = User.GetRequiredUserId();
 
         var result = await documentService.UploadNewVersionAsync(userId, documentId, request, cancellationToken);

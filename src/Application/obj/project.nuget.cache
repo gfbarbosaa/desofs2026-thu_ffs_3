@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "q5L4WCvmXdE=",
+  "dgSpecHash": "1fsItWsqBHs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\goncalo.barbosa\\OneDrive - Unavets Services S.L\\Documents\\ISEP\\DESOFT\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Documentos\\ISEP\\DESOFT\\desofs2026-thu_ffs_3\\src\\Application\\SafeVault.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\goncalo.barbosa\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
-    "C:\\Users\\goncalo.barbosa\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.14\\microsoft.netcore.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.14\\microsoft.windowsdesktop.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.14\\microsoft.aspnetcore.app.ref.9.0.14.nupkg.sha512"
   ],
   "logs": []
 }

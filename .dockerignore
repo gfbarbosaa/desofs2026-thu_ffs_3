@@ -1,0 +1,22 @@
+## Build artifacts
+**/bin/
+**/obj/
+**/publish/
+
+## Storage and logs (mounted as volumes)
+/storage/
+/logs/
+*.log
+
+## Environment secrets
+.env
+.env.*
+!.env.example
+
+## IDE and OS
+.vs/
+.vscode/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
